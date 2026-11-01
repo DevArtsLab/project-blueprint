@@ -4,6 +4,10 @@
 
 DevArts Lab project. Agent conventions: [AGENTS.md](AGENTS.md).
 
+## Contents
+
+- [License](#license)
+
 ## License
 
 MIT © [DevArts Lab](https://github.com/DevArtsLab)
