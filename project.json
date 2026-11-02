@@ -1,4 +1,4 @@
 {
-  "slug": "{{PROJECT_NAME}}",
-  "secrets": ["<platform>/<env>/<name>"]
+  "slug": "project-blueprint",
+  "secrets": []
 }

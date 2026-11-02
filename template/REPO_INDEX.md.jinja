@@ -1,0 +1,20 @@
+# REPO_INDEX.md - {{ slug }}
+
+> Single source of truth for what lives in this repository.
+> Regenerate when files or folders are added, removed, or substantially rewritten.
+>
+> **Last updated:** {{ '%Y-%m-%d' | strftime }}
+
+## Top-level
+
+| Path                | What it is                                                                                           |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| `README.md`         | Entry point                                                                                          |
+| `REPO_INDEX.md`     | This index                                                                                           |
+| `AGENTS.md`         | Agent-facing conventions; foundation adoption                                                        |
+| `.gitignore`        | Ignore rules                                                                                         |
+| `LICENSE`           | MIT, {{ org_name }}                                                                                  |
+| `SECURITY.md`       | Disclosure contact, supported versions                                                               |
+| `.dev.vars.example` | Local config template; never real secrets                                                            |
+| `.agents/`          | Project-scope ai-config: config, skills (project-only)                                               |
+| `docs/`               | Documentation root: adr, research, design, architecture, agents, governance, security, runbooks, api |

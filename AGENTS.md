@@ -1,13 +1,15 @@
 # Agent Guide
 
-{{PROJECT_NAME}} - DevArts Lab project.
+project-blueprint - DevArts Lab project. Copier template; `template/` is the
+scaffold rendered into generated projects; root files are this repo's own docs.
 
 ## Foundation
 
-This repository is governed by the DevArts Lab foundation: `../devartslab-foundation`
-(remote: `DevArtsLab/devartslab-foundation`). Adopted revision: 3a (2026-10-26).
+This repository is governed by the DevArts Lab foundation: `../foundation`
+(remote: `DevArtsLab/foundation`). Adopted revision: 3a (2026-10-26).
 
-- Skills resolve by name from `~/.agents/skills/`; do not vendor copies.
-- Project-scope config and skills live in `.agents/`.
-- Secrets resolve from the workspace store (`<workspace>/config/env/<slug>/`, D14). No secret values in the repo.
-- Track work in the DevArts Lab Linear workspace.
+## Conventions
+
+Stamped conventions for generated projects: `template/AGENTS.md.jinja`.
+Template-specific: field contract in `copier.yml`; conditionals in Jinja
+`{% if %}`, never post-render edits.

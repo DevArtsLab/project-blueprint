@@ -1,3 +1,2 @@
-# Required env keys - values resolve from the workspace store:
-#   <workspace-root>/config/env/<slug>/.env.local  (root marker: .workspace.json)
+# Required env keys - values resolve per D14.
 EXAMPLE_KEY=

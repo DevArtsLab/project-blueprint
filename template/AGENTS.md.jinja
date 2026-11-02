@@ -1,0 +1,15 @@
+# Agent Guide
+
+{{ slug }} - {{ org_name }} project.
+{% if foundation_repo %}
+## Foundation
+
+This repository is governed by the {{ org_name }} foundation: `../{{ foundation_repo }}`
+(remote: `{{ github_org }}/{{ foundation_repo }}`). Adopted revision: 3a (2026-10-26).
+{% endif %}
+## Conventions
+
+- Skills resolve by name from `~/.agents/skills/`; do not vendor copies.
+- Project-scope config and skills live in `.agents/`.
+- Secrets resolve from the workspace store (root marker `.workspace.json`, D14). No secret values in the repo.
+- Track work in the {{ org_name }} {{ tracker }} workspace.

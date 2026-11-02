@@ -1,0 +1,55 @@
+_min_copier_version: "9"
+_answers_file: .copier-answers.yml
+
+# Scaffold lives in template/; root files are this repository's own docs.
+_subdirectory: template
+
+# Field names are the contract: identical to config/identity/<brand>.json keys.
+slug:
+  type: str
+  help: Project slug, lowercase-hyphen
+  validator: >-
+    {% if not (slug | regex_search('^[a-z][a-z0-9-]{1,38}[a-z0-9]$')) %}
+    invalid slug '{{ slug }}'
+    {% endif %}
+
+one_line_description:
+  type: str
+  default: One-line description.
+
+org_name:
+  type: str
+
+github_org:
+  type: str
+
+org_domain:
+  type: str
+  default: ""
+
+security_email:
+  type: str
+  default: ""
+
+contact_email:
+  type: str
+  default: ""
+
+license_holder:
+  type: str
+  default: ""
+  help: Copyright holder; empty falls back to org_name
+
+foundation_repo:
+  type: str
+  default: ""
+  help: Foundation repo name; empty drops the Foundation section
+
+tracker:
+  type: str
+  default: Linear
+
+secrets:
+  type: json
+  default: "[]"
+  help: JSON list of secret ids, <platform>/<env>/<NAME>

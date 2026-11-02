@@ -1,23 +1,22 @@
-# {{PROJECT_NAME}}
+# project-blueprint
 
-> One-line description.
+Copier template for new workspace repositories.
 
-DevArts Lab project. Agent conventions: [AGENTS.md](AGENTS.md).
+## Layout
 
-## Contents
+| Path         | Role                                        |
+| ------------ | ------------------------------------------- |
+| `copier.yml` | Field contract: names, defaults, validation |
+| `template/`  | Scaffold rendered into generated projects   |
 
-- [Support](#support)
-- [License](#license)
-- [Credits](#credits)
+`template/` holds the files stamped into children; root files are this
+repository's own docs. Shared generic files (`.gitignore`,
+`.dev.vars.example`, `SECURITY.md`, `.agents/`, `md/`) exist in both places.
 
-## Support
+## Usage
 
-[Open an issue](https://github.com/DevArtsLab/{{PROJECT_NAME}}/issues).
-
-## License
-
-MIT. See [LICENSE](LICENSE).
-
-## Credits
-
-Built by [DevArts Lab](https://github.com/DevArtsLab).
+```bash
+copier copy --data-file <identity-manifest>.json --data slug=<slug> --defaults \
+  <this-repo> <dest>
+copier update <dest>   # after template changes, converge generated repos
+```
