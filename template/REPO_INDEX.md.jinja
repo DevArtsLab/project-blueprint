@@ -17,4 +17,7 @@
 | `SECURITY.md`       | Disclosure contact, supported versions                                                               |
 | `.dev.vars.example` | Local config template; never real secrets                                                            |
 | `.agents/`          | Project-scope ai-config: config, skills (project-only)                                               |
+| `scripts/`          | `bootstrap.sh` env-store link + project scripts                                                     |{% if has_db %}
+| `db/`               | SQLite migrations (`schema_ledger`)                                                                 |{% endif %}{% if has_web %}
+| `web/`              | Web portal + Workers static-assets deploy tooling                                                    |{% endif %}
 | `docs/`               | Documentation root: adr, research, design, architecture, agents, governance, security, runbooks, api |

@@ -53,3 +53,13 @@ secrets:
   type: json
   default: "[]"
   help: JSON list of secret ids, <platform>/<env>/<NAME>
+
+has_web:
+  type: bool
+  default: false
+  help: Include web-portal deploy tooling (wrangler static assets).
+
+has_db:
+  type: bool
+  default: false
+  help: Include SQLite migration scaffold (schema_ledger).

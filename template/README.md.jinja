@@ -4,6 +4,15 @@
 
 {{ org_name }} project. Agent conventions: [AGENTS.md](AGENTS.md).
 
+## Setup
+
+- bash scripts/bootstrap.sh
+
+{% if has_web %}## Ship
+
+- bash web/scripts/build-static.sh
+- pnpm -C web dlx wrangler deploy
+{% endif %}
 ## Contents
 
 - [Support](#support)

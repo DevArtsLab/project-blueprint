@@ -1,0 +1,9 @@
+-- {{ slug }} schema v1.
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE schema_ledger (
+  version     INTEGER PRIMARY KEY,
+  applied_at  TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+);
+
+INSERT INTO schema_ledger (version) VALUES (1);
