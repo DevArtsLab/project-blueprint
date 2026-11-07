@@ -9,7 +9,7 @@ This repository is governed by the {{ org_name }} foundation: `../{{ foundation_
 {% endif %}
 ## Conventions
 
-- Skills resolve by name from `~/.agents/skills/`; do not vendor copies.
+- Skills resolve by name from `$AGENT_CONFIG_HOME/skills/`; do not vendor copies.
 - Project-scope config and skills live in `.agents/`.
 - Secrets resolve from the workspace store (root marker `.workspace.json`, D14). No secret values in the repo.
 - Track work in the {{ org_name }} {{ tracker }} workspace.
