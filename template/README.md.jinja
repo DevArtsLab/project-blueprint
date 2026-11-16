@@ -12,6 +12,9 @@
 
 - bash web/scripts/build-static.sh
 - pnpm -C web dlx wrangler deploy
+{% endif %}{% if has_worker %}## Ship
+
+- npx wrangler deploy --config worker/wrangler.toml
 {% endif %}
 ## Contents
 

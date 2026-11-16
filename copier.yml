@@ -59,7 +59,17 @@ has_web:
   default: false
   help: Include web-portal deploy tooling (wrangler static assets).
 
+has_worker:
+  type: bool
+  default: false
+  help: Include bound-Worker deploy scaffold (worker/ wrangler.toml + src/index.js).
+
 has_db:
   type: bool
   default: false
   help: Include SQLite migration scaffold (schema_ledger).
+
+has_docs:
+  type: bool
+  default: false
+  help: Include docs/ documentation tree scaffold.

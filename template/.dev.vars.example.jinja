@@ -1,0 +1,4 @@
+# Required env keys - values resolve per D14.
+{% for secret in secrets %}{{ secret.split('/')[-1] }}=
+{% else %}# None required by this project.
+{% endfor %}
