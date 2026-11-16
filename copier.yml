@@ -64,6 +64,11 @@ has_worker:
   default: false
   help: Include bound-Worker deploy scaffold (worker/ wrangler.toml + src/index.js).
 
+has_media:
+  type: bool
+  default: false
+  help: Include public media-asset host (media/ Worker + R2 bucket + provision script).
+
 has_db:
   type: bool
   default: false

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ZONE_ID="${1:?usage: provision-media.sh <cloudflare-zone-id>}"
+BUCKET="{{ slug }}-media"
+ROBOTS="$(mktemp)"
+printf 'User-agent: *\nAllow: /\n' > "$ROBOTS"
+npx wrangler r2 bucket create "$BUCKET"
+npx wrangler r2 bucket domain add "$BUCKET" --domain "media.{{ org_domain }}" --zone-id "$ZONE_ID" --min-tls 1.2 --force
+npx wrangler r2 bucket dev-url enable "$BUCKET"
+npx wrangler r2 object put "$BUCKET/robots.txt" --file "$ROBOTS" --content-type text/plain --remote
+rm -f "$ROBOTS"
+npx wrangler deploy --config media/wrangler.toml
+echo "media.{{ org_domain }} is live"

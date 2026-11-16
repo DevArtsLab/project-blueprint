@@ -20,5 +20,6 @@
 | `scripts/`          | `bootstrap.sh` env-store link + project scripts                                                     |{% if has_db %}
 | `db/`               | SQLite migrations (`schema_ledger`)                                                                 |{% endif %}{% if has_web %}
 | `web/`              | Web portal + Workers static-assets deploy tooling                                                    |{% endif %}{% if has_worker %}
-| `worker/`           | Bound-Worker deploy: wrangler.toml + `src/index.js`; vars for org strings                            |{% endif %}{% if has_docs %}
+| `worker/`           | Bound-Worker deploy: wrangler.toml + `src/index.js`; vars for org strings                            |{% endif %}{% if has_media %}
+| `media/`            | Public media-asset host: Worker + R2 bucket serving `media.{{ org_domain }}`; provision via `scripts/provision-media.sh` |{% endif %}{% if has_docs %}
 | `docs/`               | Documentation root: adr, research, design, architecture, agents, governance, security, runbooks, api |{% endif %}

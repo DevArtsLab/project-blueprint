@@ -1,0 +1,15 @@
+name = "{{ slug }}-media"
+main = "src/index.js"
+compatibility_date = "{{ '%Y-%m-%d' | strftime }}"
+workers_dev = false
+
+routes = [
+  { pattern = "media.{{ org_domain }}/*", zone_name = "{{ org_domain }}" },
+]
+
+[vars]
+BRAND_NAME = "{{ org_name }}"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "{{ slug }}-media"

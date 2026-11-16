@@ -15,6 +15,11 @@
 {% endif %}{% if has_worker %}## Ship
 
 - npx wrangler deploy --config worker/wrangler.toml
+{% endif %}{% if has_media %}## Media
+
+- Provision once (bucket, domain, robots.txt, deploy): `bash scripts/provision-media.sh <cloudflare-zone-id>`
+- Upload: `npx wrangler r2 object put {{ slug }}-media/<key> --file <local-path> --remote`
+- Share link: `https://media.{{ org_domain }}/<key>`
 {% endif %}
 ## Contents
 
