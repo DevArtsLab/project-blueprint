@@ -1,0 +1,39 @@
+version: 2
+updates:
+  # npm ecosystem covers package.json + pnpm-lock.yaml (Dependabot resolves
+  # pnpm natively). Keep PRs batched so alert debt never piles up.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    groups:
+      minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
+      major:
+        update-types:
+          - "major"
+    labels:
+      - "dependencies"
+    # Lab policy: majors merge only after a green build, never automerge.
+    commit-message:
+      prefix: "chore(deps)"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    groups:
+      actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(ci)"
